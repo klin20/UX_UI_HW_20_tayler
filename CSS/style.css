@@ -1,52 +1,55 @@
-.navbar-toggler{
-    display:flex;
+.navbar-toggler {
+    display: flex;
 }
 
-.a-body-button{
+.a-body-button {
     font-family: var(--sans-serif);
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
-    color:#000;
-    
+    color: #000;
+
 }
 
 
 
 
 
-
-.arrow-right,
+/* [KELLY'S COMMENT] you can remove these, i think these are older code */
+/* .arrow-right,
 .arrow-left,
 .long-arrow-right,
-.long-arrow-left{
-  display: block;
-  margin: 30px auto;
-  width: 25px;
-  height: 25px;
-  border-top: 6px solid #000;
-  border-left: 6px solid #000;
-}   
+.long-arrow-left {
+    display: block;
+    margin: 30px auto;
+    width: 25px;
+    height: 25px;
+    border-top: 6px solid #000;
+    border-left: 6px solid #000;
+}
+
 .arrow-right,
-.long-arrow-right{
- transform: rotate(135deg);
+.long-arrow-right {
+    transform: rotate(135deg);
 }
 
 .arrow-left,
-.long-arrow-left{
- transform: rotate(-45deg);
+.long-arrow-left {
+    transform: rotate(-45deg);
 }
+
 .long-arrow-right::after,
-.long-arrow-left::after{
-  content: "";
-  display: block;
-  width: 6px;
-  height: 45px;
-  background-color: black;
-  transform: rotate(-45deg) translate(15px, 4px);
-  left: 0;
-  top: 0;
-}
+.long-arrow-left::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 45px;
+    background-color: black;
+    transform: rotate(-45deg) translate(15px, 4px);
+    left: 0;
+    top: 0;
+} */
+
 /*
 .scroll-watcher{
     height: 10px;
@@ -68,7 +71,7 @@
 */
 
 .navbar {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: sticky;
@@ -76,35 +79,37 @@
     top: 0;
     z-index: 2;
 
-    
+
 
 }
-.navbar-brand{
+
+.navbar-brand {
     color: whitesmoke;
     padding-left: 36px;
 }
 
 
-.navbar-toggler{
+.navbar-toggler {
     font-size: 16px;
     text-decoration: none;
-    
+
 }
 
-div{
+div {
     display: block;
     unicode-bidi: isolate;
 
-} */
+}
 
-.c-project_holder{
+*/ .c-project_holder {
     display: flex;
     Flex-direction: row;
 
 
 }
 
-.sidenav{
+/* [KELLY'S COMMENT 4/4] because your main content and the sidenav both utilize the sidenav class, it's shrinking your main content to be 18vw in width (see comment right below this one) */
+/* .sidenav{
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -117,9 +122,30 @@ div{
     background:#eee;
     overflow-x: hidden;
     padding: var(64px) var(16px);
+} */
+
+/* [KELLY'S COMMENT 4/4] to only target the side navigation, you use target the sidenavigation ID */
+#sidenavigation {
+    display: flex;
+    flex-direction: column;
+    /* align-items: stretch; */
+    width: 18vw;
+    height: 100%;
+    /* [KELLY'S COMMENT] instead of sticky, i think fixed is more aligned with what you want! */
+    /* position: sticky; */
+    position: fixed;
+    z-index: 8;
+    /* [KELLY'S COMMENT] you can remove the top and left properties, i don't think you need these  */
+    /* top:52px;
+    left:10px; */
+    background: #eee;
+    overflow-x: hidden;
+    /* padding: var(64px) var(16px); */
+    /* [KELLY'S COMMENT] i would rewrite the above as... */
+    padding: 32px 16px;
 }
 
-.sidenav a{
+.sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     display: block;
@@ -131,26 +157,30 @@ div{
     color: #ee2a61;
 }
 
-@media screen and (max-height: 450px) {
+/* [KELLY'S COMMENT] media queries are loaded in last, move this to the end of your code */
+/* @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-  }
+  } */
 
-.table-list{
+
+/* [KELLY'S COMMENT] you can remove this code below */
+/* .table-list{
     padding-left: 18px;
 
-}
+} */
 
-.c-header-h5{
+.c-header-h5 {
     color: grey;
     text-transform: uppercase;
     font-size: 12px;
     display: flex;
     padding-left: 8px;
-    margin-top: 64px;
+    /* [KELLY'S COMMENT] you can remove the margin-top from the .c-header-h5 since the padding from the sidenavigation has been added */
+    /* margin-top: 64px; */
 }
 
-.c-divider{
+.c-divider {
     height: var(--thickness);
     border-bottom: var (--thickness) solid black;
     flex: 0 auto;
@@ -158,31 +188,36 @@ div{
 
 }
 
-.c-align.is--horizontal-center{
+.c-align.is--horizontal-center {
     display: flex;
     align-items: center;
     flex: 1;
 }
 
-.a-body-button{
+/* [KELLY'S COMMENT] you have this selector written twice in your CSS (once here and once on Line 5) - consolidate */
+.a-body-button {
     background-color: rgb(64, 62, 62);
     color: whitesmoke;
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 4px ;
+    padding-top: 4px;
     padding-bottom: 4px;
-    display: inline-block;  
+    display: inline-block;
     justify-content: space-between;
     margin-right: 1;
 
-}   
-
-.next-arrow{
-    margin-right: 36px;
-    display: inline-block
 }
 
-.slideout_link.secondary{
+.next-arrow {
+    margin-right: 36px;
+    display: inline-block;
+
+    /* [KELLY'S COMMENT] added the following to turn the black arrows, white against your navbar and then resized them */
+    filter: invert(1);
+    width: 25px;
+}
+
+.slideout_link.secondary {
     background-color: black;
     color: whitesmoke;
 }
@@ -199,47 +234,56 @@ div{
 }
 */
 
-.scrim.is--hidden{
+.scrim.is--hidden {
     display: none;
 
 }
 
-.scrim{
+.scrim {
     z-index: 2;
     width: 100%;
     height: 100%;
     position: relative;
 
 }
-.c-container_holder{
+
+.c-container_holder {
     display: flex;
     width: 100%;
-    
+
+    /* [KELLY'S COMMENT] adding the following code so that horizontal scrolling will be hidden */
+    overflow: hidden;
 }
 
-.c-container{
+.c-container {
     display: flex;
     flex-direction: column;
 
 }
 
-.c-container.is--project{
+/* project body */
+.c-container.is--project {
     width: 100%;
+
+    /* [KELLY'S COMMENT] adding the following code to shift it to the right so that the side navigation doesn't overlap the content! */
+    /* why 20vw? because the side navigation is currently taking up 18vw so at a minimum, the body content must be pushed to the left 18vw. the extra 2vw is so that the content isn't pushed up against the right border of the side navigation */
+    margin-left: 20vw;
 }
-.c-main_body.is--project{
+
+.c-main_body.is--project {
     padding-right: 16px;
     padding-left: 16px;
     display: flex;
     flex-direction: column;
 }
 
-.c-wrapper{
-    width:100%;
+.c-wrapper {
+    width: 100%;
     flex-direction: column;
     display: flex;
 }
 
-.c-flex_vertical.is--m_spacing{
+.c-flex_vertical.is--m_spacing {
     display: flex;
     align-items: stretch;
     flex-direction: column;
@@ -247,33 +291,33 @@ div{
 
 }
 
-.c-scroll_offset{
+/* .c-scroll_offset{
     margin-top: -52px;
     padding-top: 64px;
-}
+} */
 
-.c-margin{
+.c-margin {
     align-self: center;
 }
 
-.c-margin.is--92_top_bottom.is--project{
+.c-margin.is--92_top_bottom.is--project {
     width: 60%;
     padding-top: 32px;
     padding-bottom: 32px;
     padding-left: 0;
 }
 
-.c-image-holder{
+.c-image-holder {
     display: flex;
     align-self: stretch;
 }
 
-.c-image-holder.is--project-hero{
-    width:45%;
+.c-image-holder.is--project-hero {
+    width: 45%;
     align-items: center;
 }
 
-.c-image_frame{
+.c-image_frame {
     padding: 16px;
     border: .75px thickness solid black;
     background-color: whitesmoke;
@@ -281,24 +325,41 @@ div{
     flex: none;
 }
 
-image{
+/* [KELLY'S COMMENT] are you trying to target the image tags? if yes, the selector should match the name of the tag (refer to img selector below) */
+/* image{
+    width: 100%;
+} */
+
+img {
     width: 100%;
 }
 
-.card{
+.card {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
     flex: 1;
     align-content: center;
     padding: 10px;
+
+    /* [KELLY'S COMMENT] i removed the style attribute from the HTML and instead added it here - this aligns better with best practice and also makes it easier so that you don't have to write duplicate code every time you create an element with the class of card */
+    width: 18rem;
 }
 
-
-
+/* [KELLY'S COMMENT] i don't think you need this */
+/* 
 .body{
     position: relative;
     min-height: 100%;
 
-}
+} */
 
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
